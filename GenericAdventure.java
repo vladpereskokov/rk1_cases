@@ -5,6 +5,7 @@ public class GenericAdventure {
     }
 
     public static class Knight implements Man {
+        public void cry(){}
     }
 
     public static class Peasant implements Man {
@@ -19,7 +20,7 @@ public class GenericAdventure {
         public Avantgarde(T comander) {
             this.comander = comander;
         }
-
+        public void fallBack() {}
         public void move(){}
     }
 
@@ -33,8 +34,9 @@ public class GenericAdventure {
     }
 
 
-    public static void moveAvangarde(Avantgarde<Man> avantgarde) {
+    public static void doScout(Avantgarde<Man> avantgarde) {
         avantgarde.move();
+        avantgarde.fallBack();
     }
 
     public static void moveEscort(Escort<Man> escort) {
@@ -42,10 +44,12 @@ public class GenericAdventure {
     }
 
     public static void moveKnights(Avantgarde<Knight> avantgarde) {
+        avantgarde.comander.cry();
         avantgarde.move();
     }
 
     public static void moveKnights(Escort<Knight> escort) {
+        escort.comander.cry();
         escort.move();
     }
 
@@ -63,17 +67,17 @@ public class GenericAdventure {
         final Army<Knight> knightsAvanRight = new Avantgarde<>(new Knight());
         final Escort<Man> peasantsEscortBack = new Escort<>(new Peasant());
         final Escort<Peasant> peasantEscortLeft = new Escort<>(new Peasant());
-        final Army<Peasant> peasantEscortRight = new Escort<>(new Peasant());
+        final Army<Peasant> peasantEscortRigth = new Escort<>(new Peasant());
         final Army<Man> knigthsReserve = new Escort<>(new Knight());
         final Avantgarde<Man> raiders = new Avantgarde<>(new Knight());
 
-        moveAvangarde(knightsAvanLeft);
+        doScout(knightsAvanLeft);
         moveKnights(knightsAvanRight);
         moveEscort(peasantsEscortBack);
         moveSomething(peasantEscortLeft);
         moveSomething(knigthsReserve);
         moveKnights(knigthsReserve);
-        moveSomething(peasantEscortRight);
+        moveSomething(peasantEscortRigth);
         moveSomething(raiders);
     }
 }
