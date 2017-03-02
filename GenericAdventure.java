@@ -63,7 +63,7 @@ public class GenericAdventure {
 
 
     public static void main(String[] args) {
-        final Army<Man> knightsAvanLeft = new Avantgarde<>(new Knight());
+        final Avantgarde<Knight> knightsAvanLeft = new Avantgarde<>(new Knight());
         final Army<Knight> knightsAvanRight = new Avantgarde<>(new Knight());
         final Escort<Man> peasantsEscortBack = new Escort<>(new Peasant());
         final Escort<Peasant> peasantEscortLeft = new Escort<>(new Peasant());
