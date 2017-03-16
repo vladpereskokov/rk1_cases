@@ -68,7 +68,7 @@ public class GenericAdventure {
         final Escort<Man> peasantsEscortBack = new Escort<>(new Peasant());
         final Escort<Peasant> peasantEscortLeft = new Escort<>(new Peasant());
         final Army<Peasant> peasantEscortRigth = new Escort<>(new Peasant());
-        final Army<Man> knigthsReserve = new Escort<>(new Knight());
+        final Army<Knight> knigthsReserve = new Escort<>(new Knight());
         final Avantgarde<Man> raiders = new Avantgarde<>(new Knight());
 
         doScout(knightsAvanLeft);
